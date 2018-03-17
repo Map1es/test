@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+    <title>v-for</title>
+</head>
+<body>
+    <h1>v-for</h1>
+    <hr>
+    <div id="app">
+        <li v-for="item in sortitem">
+            {{item}}
+        </li>
+        <hr>
+        <li v-for="(sturdent,index) in sturdents">
+           {{index+1}}:{{sturdent.name}}-{{sturdent.age}}
+        </li>
+    </div>
+
+    <script type="text/javascript">
+        var app = new Vue({
+            el:'#app',
+            data:{
+                items:[11,23,123,12313,222],
+                sturdents:[
+                    {name:'zzz',age:33},
+                    {name:'z2z',age:31},
+                    {name:'z33z',age:3},
+                    {name:'zz44',age:14}
+                ]
+            },
+            computed:{
+                sortitem:function(){
+                    return this.items.sort(sortNumber);
+                }
+            }
+        })
+        function sortNumber(a,b){
+            return a-b;
+        }
+    </script>
+</body>
+</html>
