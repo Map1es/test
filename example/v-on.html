@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+    <title>v-on</title>
+</head>
+<body>
+    <h1>v-on</h1>
+    <hr>
+    <div id="app">
+        <h1>本场得分：{{scount}}</h1>
+        <p>
+            <button v-on:click="sadd">加分</button>
+            <button v-on:click="sjian">减分</button>
+            <input type="text" v-on:keyup.enter="onEnter" v-model="secondCount">
+        </p>
+    </div>
+
+    <script type="text/javascript">
+        var app = new Vue({
+            el:'#app',
+            data:{
+                scount :0,
+                secondCountp:0
+            },
+            methods:{
+                sadd:function(){
+                    this.scount++;
+                },
+                sjian:function(){
+                    this.scount--;
+                },
+                onEnter:function(){
+                 this.scount=this.scount+parseInt(this.secondCount);
+}
+            }
+        })
+    </script>
+</body>
+</html>

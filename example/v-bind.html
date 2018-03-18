@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+    <title>v-bind</title>
+</head>
+<body>
+    <h1>v-bind</h1>
+    <hr>
+    <div id="app">
+        <img v-bind:src="imgSrc" width="200px">
+        <hr>
+        <div :class="{classA:isOk}">1、绑定CLASS</div>
+        <hr>
+        <div>
+            <input type="checkbox" id="isOk" v-model="isOk">
+            <label for="isOk">isOk={{isOk}}</label>
+        </div>
+    </div>
+  
+    <style>
+     .classA{
+         color: red;
+     }
+     .classB{
+         font-size: 150%;
+     }
+    </style>
+    <script type="text/javascript">
+        var app = new Vue({
+            el:'#app',
+            data:{
+                imgSrc:'aa.jpg',
+                classname:'classA',
+                isOk:true
+            }
+        })
+    </script>
+</body>
+</html>
