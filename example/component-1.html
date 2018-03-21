@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+    <title>component组件1</title>
+</head>
+<body>
+    <h1>component组件1</h1>
+    <hr>
+    <div id="app">
+        <maples></maples>
+    </div>
+    <div id="ppa">
+            <maple></maple>
+        </div>
+
+    <script type="text/javascript">
+        Vue.component('maple',{
+            template:`<div style="color:red">我是全局maple组件</div>`
+        })
+        var app = new Vue({
+            el:'#app',
+            data:{
+                message:'hhhhhh'
+            },
+            components:{
+                "maples":{
+                    template:`<div style="color:red">我是全局maple组件</div>` 
+                }
+            }
+        })
+        var ppa = new Vue({
+                el:'#ppa'
+            }
+        )
+    </script>
+</body>
+</html>
